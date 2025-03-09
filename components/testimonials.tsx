@@ -134,7 +134,7 @@ export default function Testimonials() {
                             </div>
                           </div>
                         </div>
-                        <p className="text-lg text-gray-700 italic mb-6">"{testimonial.quote}"</p>
+                        <p className="text-lg text-gray-700 italic mb-6">{`"${testimonial.quote}"`}</p>
                         <div className="flex items-center">
                           <div className="h-px bg-purple-200 flex-grow"></div>
                           <div className="px-4 text-purple-600 font-medium">Verified Customer</div>
