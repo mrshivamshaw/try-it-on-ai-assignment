@@ -2,47 +2,11 @@
 
 import type React from "react"
 
-import { useState, useRef, useEffect } from "react"
 import Image from "next/image"
 import { motion } from "framer-motion"
 
 export default function HeroSection() {
-  const [sliderPosition, setSliderPosition] = useState(50)
-  const [isDragging, setIsDragging] = useState(false)
-  const containerRef = useRef<HTMLDivElement>(null)
 
-  const handleMouseDown = () => {
-    setIsDragging(true)
-  }
-
-  const handleMouseUp = () => {
-    setIsDragging(false)
-  }
-
-  const handleMouseMove = (e: React.MouseEvent) => {
-    if (isDragging && containerRef.current) {
-      const rect = containerRef.current.getBoundingClientRect()
-      const x = e.clientX - rect.left
-      const newPosition = (x / rect.width) * 100
-      setSliderPosition(Math.min(Math.max(newPosition, 0), 100))
-    }
-  }
-
-  const handleTouchMove = (e: React.TouchEvent) => {
-    if (containerRef.current) {
-      const rect = containerRef.current.getBoundingClientRect()
-      const x = e.touches[0].clientX - rect.left
-      const newPosition = (x / rect.width) * 100
-      setSliderPosition(Math.min(Math.max(newPosition, 0), 100))
-    }
-  }
-
-  useEffect(() => {
-    window.addEventListener("mouseup", handleMouseUp)
-    return () => {
-      window.removeEventListener("mouseup", handleMouseUp)
-    }
-  }, [])
 
   return (
     <section className="w-full bg-gradient-to-b from-purple-50 to-white py-20 md:py-32">
