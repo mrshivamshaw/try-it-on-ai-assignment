@@ -6,7 +6,7 @@ import Image from "next/image"
 export default function ClientLogos() {
   const clientLogos = ["/images/brand/dailydot.png", "/images/brand/independent.png", "/images/brand/Indi100.png", "/images/brand/Insider_logo.png", "/images/brand/BBC.png","/images/brand/WSJ.png"]
   return (
-    <section className="w-full py-9 border-b border-gray-100 bg-black">
+    <section className="w-full py-9 border-b border-gray-100 bg-black ">
       <div className="container mx-auto px-4 md:px-8">
         <motion.div
           className="flex flex-wrap justify-center items-center gap-8 md:gap-20 "

@@ -6,18 +6,18 @@ import Image from "next/image"
 
 const beforeAfterPairs = [
   {
-    before: "/images/transformation/corporate.png",
-    after: "/images/transformation/corporate.png",
+    before: "/images/before/img1.webp",
+    after: "/images/after/img1.webp",
     title: "Corporate Professional",
   },
   {
-    before: "/images/transformation/creative.png",
-    after: "/images/transformation/creative.png",
+    before: "/images/before/img3.webp",
+    after: "/images/after/img3.webp",
     title: "Creative Director",
   },
   {
-    before: "/images/transformation/tech.png",
-    after: "/images/transformation/tech.png",
+    before: "/images/before/img7.jpg",
+    after: "/images/after/img7.webp",
     title: "Tech Entrepreneur",
   },
 ]
@@ -87,7 +87,7 @@ export default function PhotoComparison() {
                 </p>
               </div>
 
-              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+              {/* <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                 <div
                   className={`bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full font-medium transition-opacity duration-300  text-black${
                     hoveredIndex === index ? "opacity-100" : "opacity-0"
@@ -95,7 +95,7 @@ export default function PhotoComparison() {
                 >
                   See the difference
                 </div>
-              </div>
+              </div> */}
             </motion.div>
           ))}
         </div>

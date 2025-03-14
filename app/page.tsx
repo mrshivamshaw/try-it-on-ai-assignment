@@ -9,6 +9,7 @@ import Pricing from "@/components/pricing"
 import FAQ from "@/components/faq"
 import CTASection from "@/components/cta-section"
 import ClientLogos from "@/components/client-logos"
+import ImageTransitionScroller from "@/components/scroller"
 
 export const metadata: Metadata = {
   title: "TryItOnAI | Professional AI Headshots in Minutes",
@@ -21,12 +22,13 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center">
+    <main className="flex min-h-screen flex-col items-center bg-white">
       <HeroSection />
+      <ImageTransitionScroller  />
       <ClientLogos />
-      <FeatureSection />
       <PhotoComparison />
       <HowItWorks />
+      <FeatureSection />
       <StyleShowcase />
       <Testimonials />
       <Pricing />
