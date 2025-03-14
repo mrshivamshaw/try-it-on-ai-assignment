@@ -213,39 +213,42 @@ const ImageTransitionScroller = () => {
       {/* Center vertical transition bar with enhanced styling */}
       <div 
   ref={centerBarRef}
-  className="absolute left-1/2 top-4 w-6 h-[91%] z-20 transform -translate-x-1/2 flex items-center justify-center rounded-xl overflow-hidden backdrop-blur-md"
+  className="absolute left-1/2 top-4 w-6 h-[91%] z-20 transform -translate-x-1/2 flex items-center justify-center rounded-xl overflow-hidden"
   style={{
-    background: 'rgba(147, 51, 234, 0.15)',
-    boxShadow: '0 8px 32px rgba(147, 51, 234, 0.25), inset 0 2px 10px rgba(255, 255, 255, 0.2)',
-    border: '1px solid rgba(147, 51, 234, 0.3)',
+    background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 255, 255, 0.15) 100%)',
+    boxShadow: '0 8px 32px rgba(255, 255, 255, 0.15), 0 4px 16px rgba(255, 255, 255, 0.1), inset 0 2px 10px rgba(255, 255, 255, 0.2)',
+    border: '1px solid rgba(255, 255, 255, 0.3)',
     backdropFilter: 'blur(8px)'
   }}
 >
-  {/* Highlight effect on top */}
+  {/* Subtle top highlight effect */}
   <div className="absolute top-0 left-0 right-0 h-1/4 bg-gradient-to-b from-white/30 to-transparent"></div>
   
-  {/* Subtle purple glow in the middle */}
-  <div className="absolute top-1/3 bottom-1/3 left-0 right-0 bg-purple-400/20 blur-sm"></div>
+  {/* Very subtle white glow in the middle */}
+  <div className="absolute top-1/3 bottom-1/3 left-0 right-0 bg-white/20 blur-md animate-pulse"></div>
   
-  {/* Central line */}
-  <div className="h-[80%] w-[1px] bg-white/60 rounded-full relative z-10"></div>
+  {/* More delicate central line */}
+  <div className="h-[85%] w-[1px] bg-gradient-to-b from-white/25 via-white/50 to-white/25 rounded-full relative z-10"></div>
+  
+  {/* Subtle bottom shine effect */}
+  <div className="absolute bottom-0 left-0 right-0 h-1/5 bg-gradient-to-t from-white/25 to-transparent"></div>
 </div>
       
-      {/* Left shadow gradient */}
-      <div 
-        className="absolute left-0 top-0 w-16 h-full z-10 pointer-events-none"
+      {/* Left shadow gradient - hidden on mobile and tablet */}
+        <div 
+        className="absolute left-0 top-0 w-16 h-full z-10 pointer-events-none hidden md:block"
         style={{
-          background: 'linear-gradient(90deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0) 100%)'
+            background: 'linear-gradient(90deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0) 100%)'
         }}
-      ></div>
-      
-      {/* Right shadow gradient */}
-      <div 
-        className="absolute right-0 top-0 w-16 h-full z-10 pointer-events-none"
+        ></div>
+
+        {/* Right shadow gradient - hidden on mobile and tablet */}
+        <div 
+        className="absolute right-0 top-0 w-16 h-full z-10 pointer-events-none hidden md:block"
         style={{
-          background: 'linear-gradient(270deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0) 100%)'
+            background: 'linear-gradient(270deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0) 100%)'
         }}
-      ></div>
+        ></div>
       
       {/* Image scroller */}
       <div 
