@@ -212,15 +212,24 @@ const ImageTransitionScroller = () => {
     <div className="relative w-full overflow-hidden bg-white mb-12">
       {/* Center vertical transition bar with enhanced styling */}
       <div 
-        ref={centerBarRef}
-        className="absolute left-1/2 top-4 w-4 h-[91%] z-20 transform -translate-x-1/2 flex items-center justify-center bg-white rounded"
-        style={{
-          boxShadow: '0 0 10px rgba(37,99,235,0.7), 0 0 20px rgba(37,99,235,0.4)'
-        }}
-      >
-        {/* Inner line for extra visual appeal */}
-        <div className="h-full w-px bg-white opacity-70"></div>
-      </div>
+  ref={centerBarRef}
+  className="absolute left-1/2 top-4 w-6 h-[91%] z-20 transform -translate-x-1/2 flex items-center justify-center rounded-xl overflow-hidden backdrop-blur-md"
+  style={{
+    background: 'rgba(147, 51, 234, 0.15)',
+    boxShadow: '0 8px 32px rgba(147, 51, 234, 0.25), inset 0 2px 10px rgba(255, 255, 255, 0.2)',
+    border: '1px solid rgba(147, 51, 234, 0.3)',
+    backdropFilter: 'blur(8px)'
+  }}
+>
+  {/* Highlight effect on top */}
+  <div className="absolute top-0 left-0 right-0 h-1/4 bg-gradient-to-b from-white/30 to-transparent"></div>
+  
+  {/* Subtle purple glow in the middle */}
+  <div className="absolute top-1/3 bottom-1/3 left-0 right-0 bg-purple-400/20 blur-sm"></div>
+  
+  {/* Central line */}
+  <div className="h-[80%] w-[1px] bg-white/60 rounded-full relative z-10"></div>
+</div>
       
       {/* Left shadow gradient */}
       <div 
